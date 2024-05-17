@@ -54,3 +54,24 @@ $> docker run it imagename sh
 # React App
 ---
 
+to install vite for react run the command:
+```bash
+$> npm create vite@latest foldername
+```
+> !You must have a node installed for npm to work!
+
+create a dockerfile inside the folder of vite
+from docker file create a command for the react file:
+```dockerfile
+FROM node:20-alphine
+
+RUN addgroup app && adduser -S -G app app
+
+USER app
+
+WORKDIR /app
+
+COPY package*.json ./
+
+USER root
+```
