@@ -74,4 +74,50 @@ WORKDIR /app
 COPY package*.json ./
 
 USER root
+
+RUN chown -R app:app
+
+USER app
+
+RUN npm install
+
+COPY ..
+
+EXPOSE 5173
+
+CMD npm run dev
+```
+
+
+then create a dockerignore to exclude the node_modules in the build:
+```.dockerignore
+node_modules/
+```
+
+in package.json file under scripts change the dev section to
+```json
+{
+  "scripts":{
+    "dev": "vite --host",
+    "build": "kung ano man yung nandito basta yung dev lang papalitan niyo"
+  }
+}
+```
+
+if the docker says the port is already allocated run the command in terminal:
+```bash
+$> docker container prune
+```
+
+then run the command in terminal again of:
+```bash
+$> docker build -t imagename .
+```
+
+> REMEMBER there is a "." after the image name AFTER the image name
+
+then run the command in terminal:
+
+```bash
+docker run -p 5173:5173 image_name
 ```
