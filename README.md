@@ -1,11 +1,12 @@
 # Docker 
 ---
-
+## Don't forget to:
 > Install docker hub from: [Docker](https://www.docker.com/products/docker-hub/)
 
 > Install WSL from Microsoft Store
 
 > Install Docker Extension for Visual Studio Code
+
 
 Using Visual Studio Code:
 * First Create a folder for your docker project or Select an existing one.
