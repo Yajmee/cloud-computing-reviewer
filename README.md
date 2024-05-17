@@ -90,7 +90,7 @@ CMD npm run dev
 ```
 
 
-then create a dockerignore to exclude the node_modules in the build:
+then create a .dockerignore to exclude the node_modules from the build:
 ```.dockerignore
 node_modules/
 ```
